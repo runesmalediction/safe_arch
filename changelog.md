@@ -8,6 +8,8 @@
   `shuffle_abv_i32_all_m256i` / `shuffle_abv_i64_all_m256i` /
   `shuffle_abv_i64_all_m512i` (`vpermt2d` / `vpermt2q`) wrappers
 * add `unpack_low_i64_m512i` / `unpack_high_i64_m512i` wrappers
+* fix `mul_i32_wide_m512i` and `mul_u32_wide_m512i` being gated on `avx512dq`
+  when the intrinsics they wrap only require `avx512f`
 
 ## 1.1
 

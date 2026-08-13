@@ -811,7 +811,7 @@ pub fn mul_i32_keep_low_m512i(a: m512i, b: m512i) -> m512i {
 /// * **Assembly:** `vpmulldq zmm, zmm, zmm`
 #[must_use]
 #[inline(always)]
-#[cfg(target_feature = "avx512dq")]
+#[cfg_attr(docsrs, doc(cfg(target_feature = "avx512f")))]
 pub fn mul_i32_wide_m512i(a: m512i, b: m512i) -> m512i {
     m512i(unsafe { _mm512_mul_epi32(a.0, b.0) })
 }
@@ -822,7 +822,7 @@ pub fn mul_i32_wide_m512i(a: m512i, b: m512i) -> m512i {
 /// * **Assembly:** `vpmuludq zmm, zmm, zmm`
 #[must_use]
 #[inline(always)]
-#[cfg(target_feature = "avx512dq")]
+#[cfg_attr(docsrs, doc(cfg(target_feature = "avx512f")))]
 pub fn mul_u32_wide_m512i(a: m512i, b: m512i) -> m512i {
     m512i(unsafe { _mm512_mul_epu32(a.0, b.0) })
 }
